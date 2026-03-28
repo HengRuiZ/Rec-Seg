@@ -145,9 +145,6 @@ def test_recommender(test_table, reference_table, results_table, output_path):
     return top1_dice, top5_dice, top_all_dice
 
 print(f'voxel_diff_weight is {voxel_diff_weight}')
-top1_dice, top5_dice, top_all_dice=test_recommender(r'/data/maia/hzhao/H&NCTV/recommender/recommendation_system.xlsx', 
-                 r'/data/maia/hzhao/H&NCTV/recommender/recommendation_system.xlsx',
-                 r'/data/maia/hzhao/H&NCTV/recommender/recommendation_system.xlsx',
-                 r'/data/maia/hzhao/H&NCTV/recommender/recommendation_results.xlsx')
+top1_dice, top5_dice, top_all_dice=test_recommender(...)
 print(f'top1_dice:{top1_dice},\n top5_dice:{top5_dice},\n top_all_dice:{top_all_dice}')
 
