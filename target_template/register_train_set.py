@@ -71,20 +71,15 @@ def register_ct_and_mask(ct1_array, mask1_array, ct2_array, mode='rigid'):
 
     return warped_ct.numpy(), warped_mask.numpy()
 
-def test_train_set(test_id, test_target, 
-                   root_dir=r'/data/maia/hzhao/data/H&NCTV/adjuvant/numpy_CTVp_OARs',
-                   save_dir=r'/data/maia/hzhao/H&NCTV/target_template/registered_targets'):
+def test_train_set(test_id, test_target,...):
     all_ids = [f for f in os.listdir(root_dir) if os.path.isdir(os.path.join(root_dir, f))]
-    val_ids = ["72354212", "91899161", "92577870", "93078367", "94007319", "94313318", "94807664"]
+    val_ids = [...]
     
-    test_ids = ["70041725", "71545860", "72849928", "73809568", 
-                "90033680", "90045746", "90589733", "91484475", "91698750", 
-                "91919502","92003371", "92063686", "92520472", 
-                "93592484", "93616032", "93791421", "94248525","94515053"]
+    test_ids = [...]
     
     exclude = set(val_ids + test_ids)
     train_ids = [id for id in all_ids if id not in exclude]
-    csv_path: str=r'/data/maia/hzhao/H&NCTV/output/data_stat/ctv_analysis_summary.csv'
+    csv_path: str=...
     root_dir = Path(root_dir)
     save_dir = Path(save_dir)
     df = pd.read_csv(csv_path)
