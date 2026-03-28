@@ -195,7 +195,5 @@ def generate_all_ref(data_dir, ref_dir, save_dir):
                 np.savez_compressed(save_filepath, volume=warped_mask)
                 print(f"保存成功: {save_filepath}")
 
-generate_all_ref(r'/data/maia/hzhao/data/H&NCTV/adjuvant/numpy_CTVp_OARs',
-                   r'/data/maia/hzhao/H&NCTV/target_template/data_stat/reference_tagrets.csv',
-                   r'/data/maia/hzhao/H&NCTV/target_template/all_refereces')
+generate_all_ref(...)
 pass
