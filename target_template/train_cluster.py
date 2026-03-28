@@ -99,7 +99,7 @@ def crop_mask(mask_array):
     return z_start, z_end, y_start, y_end, x_start, x_end
 
 def get_data_by_label(data_path, key="Physician"):
-    df = pd.read_csv(r'/data/maia/hzhao/H&NCTV/target_template/data_stat/ctv_analysis_summary.csv')
+    df = pd.read_csv(...)
     df['MRN'] = df['MRN'].astype(str)
     df.set_index('MRN', inplace=True)
     X=[]
@@ -242,8 +242,8 @@ def save_references(projection, y_kmeans, labels, output_path):
     print(f"成功保存参考表至: {output_path}")
     return df
 
-#X, y, labels=get_data_by_label(data_path=Path(r'/data/maia/hzhao/H&NCTV/target_template/initial_registered_targets_93592484_ctv0'))
-X, y, labels=get_data_by_label(data_path=Path(r'/data/maia/hzhao/H&NCTV/target_template/initial_registered_targets_93592484_ctv0'),key='LateralDeviation_px')
+#X, y, labels=get_data_by_label(data_path=Path(...))
+X, y, labels=get_data_by_label(data_path=Path(...),key='LateralDeviation_px')
 
 #X,y=remove_by_type(X,y,2)
 
@@ -268,15 +268,15 @@ if (0):
 
 
     plt.tight_layout()
-    plt.savefig(r'/data/maia/hzhao/H&NCTV/target_template/clustered.png')
+    plt.savefig(...)
 
 else:    
-    #loaded_transformer = joblib.load(r'/data/maia/hzhao/H&NCTV/target_template/HN_CTVP_umap_model.joblib')
+    #loaded_transformer = joblib.load(...)
     transformer = umap.UMAP(random_state=42, n_jobs=1)
     print(f"Computing projection ...")
     projection = transformer.fit_transform(X)
-    joblib.dump(transformer, r'/data/maia/hzhao/H&NCTV/target_template/HN_CTVP_umap_model.joblib')
-    np.savez_compressed(r'/data/maia/hzhao/H&NCTV/target_template/umap_projection', projection=projection, labels=labels)
+    joblib.dump(transformer, ...)
+    np.savez_compressed(..., projection=projection, labels=labels)
 
     #pred=transformer.transform(X)
 
@@ -295,7 +295,7 @@ else:
     #X_avg,y_avg, p_list=avg_patient(imgs,projections[name],y)
     X_avg=projection
 
-    save_references(X_avg, y_clustered, labels, output_path=r'/data/maia/hzhao/H&NCTV/target_template/data_stat/reference_tagrets.csv')
+    save_references(X_avg, y_clustered, labels, output_path=...)
 
     #plot_embedding(X_avg, y_clustered, title,ax)
     #plot_embedding(X_avg, y, title,ax)
@@ -303,6 +303,6 @@ else:
     y=np.abs(y)
     plot_embedding_continuous(X_avg, y, title,ax)
     plt.tight_layout()
-    #plt.savefig(f'/data/maia/hzhao/H&NCTV/target_template/umap_physician_{n_clusters}clusters.png')
-    plt.savefig(f'/data/maia/hzhao/H&NCTV/target_template/abs_laterality.png')
+    #plt.savefig(...)
+    plt.savefig(...)
 
